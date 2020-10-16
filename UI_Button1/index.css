@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,700,900");
+.btn-wrap {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f3f9;
+  height: 100vh;
+  font-family: 'Muli', Arial, sans-serif;
+}
+
+#dribbble {
+  position: fixed;
+  display: block;
+  right: 70px;
+  bottom: 16px;
+}
+#dribbble svg {
+  display: block;
+  width: 76px;
+  height: 24px;
+  fill: rgba(146, 156, 208, 0.8);
+}
+
+#twitter {
+  position: fixed;
+  display: block;
+  right: 25px;
+  bottom: 11px;
+}
+#twitter svg {
+  width: 24px;
+  height: 24px;
+  fill: rgba(146, 156, 208, 0.8);
+}
+
+#hicon {
+  position: fixed;
+  display: block;
+  left: 25px;
+  bottom: -42px;
+}
+#hicon svg {
+  width: 78px;
+  height: 78px;
+  fill: rgba(146, 156, 208, 0.8);
+}
+
+.btn-cnt, .cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.concept-wrap, .btn-wrap, .cnt, .lock-on {
+  width: 200px;
+  height: 70px;
+}
+
+.concept-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-wrap {
+  cursor: pointer;
+  position: absolute;
+  background: #1462ff;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px -10px #4a74c9;
+  overflow: hidden;
+  transform: translateX(0);
+}
+
+.btn-cnt {
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: row;
+  height: 70px;
+  width: 800px;
+  z-index: 9;
+}
+
+.cnt {
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0 25px;
+}
+.cnt .text {
+  text-align: left;
+  font-size: 1.4em;
+  margin-right: auto;
+  color: #fff;
+}
+.cnt .icon {
+  margin-top: 3px;
+  color: #fff;
+}
+
+.tap {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  background: transparent;
+  opacity: .4;
+  top: calc(50% - 69px);
+  right: -32px;
+  border-radius: 50%;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.wave {
+  width: 30px;
+  height: 30px;
+  background: #4784ff;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.wave-act {
+  animation: t-wave 599ms cubic-bezier(0.77, 0.06, 0, 0.99) forwards;
+}
+
+@keyframes t-wave {
+  0% {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    width: 40px;
+    height: 40px;
+  }
+  50% {
+    opacity: .9;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 140px;
+    height: 140px;
+  }
+}
+.lock-on {
+  background: transparent;
+  position: absolute;
+  z-index: 11;
+  cursor: pointer;
+}
+
