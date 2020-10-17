@@ -1,0 +1,208 @@
+body {
+  font-family: 'Dosis', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+#background {
+  background-image: url('http://drp-images.nettavisen.no/images/article/2017/01/05/3423299080/1/w1024/3350301.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+/*   filter: blur(60px); */
+  height: 100vh;
+  width: 100%;
+}
+#background:after {
+  bottom: 0;
+  content:"";
+  background-color: rgba(3,28,46,0.95);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.container {
+  border-radius: 10px;
+  box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  letter-spacing: 2px;  
+  left: 50%;
+  justify-content: space-between;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+}
+.container > div + div {
+  box-shadow: inset 0px 5px 5px rgba(0,0,0,0.2);
+}
+.st0 {fill: #fff}
+.st1 {opacity: 0.8; fill: #fff;}
+/* //////////////////////////////////////// location ///////*/
+#location {
+  align-items: baseline;
+  background-image: url('http://www.linformale.eu/wp-content/uploads/2018/02/torino.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #094067;
+  color: #fff;
+  display: flex;
+  height: 800px;
+  justify-content: space-between;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  width: 100%;
+  transition: height 0.4s ease-in-out;
+}
+#location .fa-map-marker-alt {color: #125482; margin-left: 1em;}
+#location .place {margin-left: 0.5em;}
+#location .day {
+  margin-left: auto;
+  margin-right: 1em;
+  text-align: right;
+}
+#location.open-menu {
+  height: 200px;
+}
+/* //////////////////////////////////////// general / icon //////*/
+.section {
+  cursor: pointer;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  transition: height 0.2s;
+  transition-timing-function: cubic-bezier(.68,.03,.32,1.47);
+  width: 100%;
+}
+.section:hover {
+  height: 400px;
+}
+.time {
+  color: rgba(255,255,255,0.6);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8em;
+  font-width: 900;
+  margin: 0;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+.section:hover .time {
+  color: rgba(255,255,255,1);
+  font-size: 1.2em;
+}
+.icon-box {
+  animation-origin: center;
+/*   background-color: red; */
+  height: 50px;
+  left: -10em;
+  opacity: 0;
+  position: absolute;
+  top: 3.5em;
+  transition-timing-function: cubic-bezier(.68,.03,.32,1.47);
+  width: 80px;
+}
+.section:hover .icon-box {
+  animation: icon-anima 0.4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes icon-anima {
+  0% {left: -10em; opacity: 0}
+  100% {left: 2em; opacity: 1}
+}
+.icon {
+  position: absolute;
+}
+.rays {
+  animation: rays-anima 2s infinite linear; 
+  animation-origin: center;
+  position: absolute;
+}
+@keyframes rays-anima {
+  0% {transform: rotate(0)}
+  100% {transform: rotate(180deg)}
+}
+.cloud {
+  left: -10px;
+  bottom: 0;
+  animation: cloud-anima 5s infinite ease; 
+  animation-origin: center;
+  position: absolute;
+}
+@keyframes cloud-anima {
+  0%  {left: -10px;}
+  50% {left: 10px;}
+  100% {left: -10px;}
+}
+.cloud02 {
+  bottom: 20px;
+  left: 30px;
+  animation: cloud-anima2 5s infinite ease; 
+  animation-origin: center;
+  position: absolute;
+}
+@keyframes cloud-anima2 {
+  0%  {left: 20px;}
+  50% {left: 10px;}
+  100% {left: 20px;}
+}
+.rain01 {
+  bottom: -5px;
+  left: 60px;
+  position: absolute;
+}
+.rain02 {
+  bottom: -5px;
+  left: 25px;
+  position: absolute;
+}
+.rain03 {
+  bottom: -10px;
+  left: 40px;
+  position: absolute;
+}
+.text-wrapper {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  right: 1em;
+  top: 4em;
+}
+.text-wrapper p   {margin: 0; margin-left: auto;}
+.degree           {font-size: 2.2em;}
+.degree sup       {font-size: 0.6em;}
+.section:hover .text-wrapper {
+  animation: text-anima 0.4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes text-anima {
+  0% {top: 10em; opacity: 0}
+  100% {top: 4.2em; opacity: 1}
+}
+/* //////////////////////////////////////// morning ///////*/
+#morning {
+  background-color: #42b9f4;
+/*   height: 300px; */
+}
+
+/* //////////////////////////////////////// midday ///////*/
+#midday {
+  background-color: #32a2db;
+}
+/* //////////////////////////////////////// afternoon ///////*/
+#afternoon {
+  background-color: #1e89bf;
+}
+/* //////////////////////////////////////// evening ///////*/
+#evening {
+  background-color: #14659E;
+}
+/* //////////////////////////////////////// nightday ///////*/
+#nightday {
+  background-color: #125482;
+}
