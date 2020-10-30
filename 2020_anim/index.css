@@ -1,0 +1,151 @@
+:root {
+  --duration: 5s;
+  --ease: cubic-bezier(.6, 0, .2, 1);
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.digit {
+  stroke-width: 30;
+  -webkit-animation: var(--duration) var(--ease) both alternate infinite;
+          animation: var(--duration) var(--ease) both alternate infinite;
+  -webkit-animation-delay: calc( (var(--i) * 0.05s));
+          animation-delay: calc( (var(--i) * 0.05s));
+}
+.digit circle,
+.digit path {
+  -webkit-animation: inherit;
+          animation: inherit;
+  stroke: var(--color);
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  /* Additional offsets for rounded stroke */
+  stroke-dashoffset: -1.2;
+  stroke-dasharray: 1 1.2;
+}
+.digit circle {
+  -webkit-animation-name: circle-draw;
+          animation-name: circle-draw;
+}
+@-webkit-keyframes circle-draw {
+  0%, 5% {
+    stroke-dasharray: 0 1.2 .2 .3;
+    stroke-dashoffset: 1.75;
+  }
+  18%, 50% {
+    stroke-dasharray: 1 1.1;
+    stroke-dashoffset: 0;
+  }
+  70%, 100% {
+    stroke-dashoffset: -1.1;
+  }
+}
+@keyframes circle-draw {
+  0%, 5% {
+    stroke-dasharray: 0 1.2 .2 .3;
+    stroke-dashoffset: 1.75;
+  }
+  18%, 50% {
+    stroke-dasharray: 1 1.1;
+    stroke-dashoffset: 0;
+  }
+  70%, 100% {
+    stroke-dashoffset: -1.1;
+  }
+}
+.digit path {
+  -webkit-animation-name: path-draw;
+          animation-name: path-draw;
+}
+@-webkit-keyframes path-draw {
+  0%, 43% {
+    stroke-dashoffset: 1.1;
+  }
+  90%, 100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes path-draw {
+  0%, 43% {
+    stroke-dashoffset: 1.1;
+  }
+  90%, 100% {
+    stroke-dashoffset: 0;
+  }
+}
+.digit {
+  -webkit-animation-name: digit;
+          animation-name: digit;
+}
+.digit:nth-child(1) {
+  --x-offset: 150%;
+}
+.digit:nth-child(2) {
+  --x-offset: 50%;
+}
+.digit:nth-child(3) {
+  --x-offset: -50%;
+}
+.digit:nth-child(4) {
+  --x-offset: -150%;
+}
+.digit:nth-child(even) {
+  --y-offset: calc(-25% + 2%);
+}
+.digit:nth-child(odd) {
+  --y-offset: calc(25% - 12%);
+}
+@-webkit-keyframes digit {
+  from, 15% {
+    -webkit-transform: translate(var(--x-offset, 0), var(--y-offset, 0));
+            transform: translate(var(--x-offset, 0), var(--y-offset, 0));
+  }
+  30% {
+    -webkit-transform: translate(0%, var(--y-offset));
+            transform: translate(0%, var(--y-offset));
+  }
+  45%, to {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes digit {
+  from, 15% {
+    -webkit-transform: translate(var(--x-offset, 0), var(--y-offset, 0));
+            transform: translate(var(--x-offset, 0), var(--y-offset, 0));
+  }
+  30% {
+    -webkit-transform: translate(0%, var(--y-offset));
+            transform: translate(0%, var(--y-offset));
+  }
+  45%, to {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.digits {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
