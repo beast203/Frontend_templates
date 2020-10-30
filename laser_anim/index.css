@@ -1,0 +1,48 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.letter-i {
+  width: 80vh;
+  height: 80vh;
+}
+
+.cls-1 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1500;
+  -webkit-animation: lines 4s infinite calc(var(--item) * 1s);
+          animation: lines 4s infinite calc(var(--item) * 1s);
+}
+
+.dot {
+  stroke-dasharray: 500;
+  stroke: var(--color);
+}
+
+.stem {
+  stroke: var(--color);
+}
+
+@-webkit-keyframes lines {
+  100% {
+    stroke-dashoffset: 3000;
+  }
+}
+
+@keyframes lines {
+  100% {
+    stroke-dashoffset: 3000;
+  }
+}
